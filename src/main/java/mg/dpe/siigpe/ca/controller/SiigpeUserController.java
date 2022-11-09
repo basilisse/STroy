@@ -1,5 +1,5 @@
 package mg.dpe.siigpe.ca.controller;
-
+/*
 import java.util.List;
 import mg.dpe.siigpe.ca.model.SiigpeUser;
 import mg.dpe.siigpe.ca.repository.SiigpeUserRepository;
@@ -69,5 +69,4 @@ public class SiigpeUserController {
 	return null;
 		
 	}
-}   
-
+}  */

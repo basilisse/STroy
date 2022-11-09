@@ -117,6 +117,8 @@ public class SecurityConfiguration<S extends Session> {
                 .authorizeHttpRequests((auth)
                         -> auth
                         .antMatchers("/api/auth/**").permitAll()
+                        .antMatchers("/api/dashbord/**").hasRole("Admin")
+                        .antMatchers("/api/dashbord").hasRole("User")
                         .anyRequest().authenticated()
                 )
                 /*.csrf((csrf)
@@ -164,7 +166,25 @@ public class SecurityConfiguration<S extends Session> {
                     .getOutputStream()
                     .println(objectMapper.writeValueAsString(data));
         }
-    }*/
+    }
+    //tetstetste
+    .antMatchers("/api/auth/**")
+                .permitAll()
+                .antMatchers("/api/reservation").hasRole("administrator")
+                .antMatchers("/api/reservation/**").hasRole("student")
+                .antMatchers("/api/rooms/**")
+                .permitAll()
+                .antMatchers("/v2/api-docs",
+                        "/configuration/ui",
+                        "/swagger-resources/**",
+                        "/configuration/security",
+                        "/swagger-ui.html",
+                        "/webjars/**")
+                .permitAll()
+                .anyRequest()
+    
+    
+    */
 
     /*private class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler {
 

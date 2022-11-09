@@ -40,7 +40,7 @@ public class SiigpeUser implements Serializable {
     @Basic(optional = false)
     @Column(name = "user_pass", nullable = false, length = 2147483647)
     @JsonIgnore
-    private String userPass;
+    public String userPass;
     @ManyToMany(mappedBy = "siigpeUserList")
     private List<SiigpeRole> siigpeRoleList;
 
